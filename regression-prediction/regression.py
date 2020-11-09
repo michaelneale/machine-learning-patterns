@@ -71,6 +71,7 @@ print(train_dataset.describe().transpose())
 train_features = train_dataset.copy()
 test_features = test_dataset.copy()
 
+# pop off the target so we don't leak it when training 
 train_labels = train_features.pop('MPG')
 test_labels = test_features.pop('MPG')
 
