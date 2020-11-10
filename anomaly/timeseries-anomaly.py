@@ -2,7 +2,13 @@
 # From: https://towardsdatascience.com/time-series-of-price-anomaly-detection-with-lstm-11a12ba4f6d9
 # Notebook origins: https://github.com/susanli2016/Machine-Learning-with-Python/blob/master/Timeseries%20anomaly%20detection%20using%20LSTM%20Autoencoder%20JNJ.ipynb
 #
-# this is a little sketchy on the details, the sequence one seems more robust, or I understand it better. Also less complete, m
+# this is a little sketchy on the details, the sequence one seems more robust, or I understand it better. Also less complete.
+#
+# For multi variate: https://towardsdatascience.com/lstm-autoencoder-for-anomaly-detection-e1f4f2ee7ccf
+# has a great follow up on REST and containerising: https://medium.com/swlh/containerized-ai-for-anomaly-detection-eb3e08225235# 
+# in particular https://github.com/BLarzalere/LSTM-Autoencoder-for-Anomaly-Detection 
+#
+
 
 
 from tensorflow import keras
