@@ -194,7 +194,7 @@ model.compile(optimizer='adam',
 
 # Visualise the network: 
 # rankdir='LR' is used to make the graph horizontal.
-#tf.keras.utils.plot_model(model, show_shapes=True, rankdir="LR")
+tf.keras.utils.plot_model(model, show_shapes=True, rankdir="LR")
 print(model.summary())
 
 
