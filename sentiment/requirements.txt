@@ -1,0 +1,9 @@
+pandas
+numpy
+tensorflow
+keras
+nltk
+wordcloud
+gensim
+spacy
+
