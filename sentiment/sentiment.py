@@ -5,6 +5,7 @@
 import argparse
 import os
 import tensorflow as tf
+import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 from tensorflow.keras import regularizers
@@ -16,7 +17,7 @@ from sklearn.model_selection import train_test_split
 
 
 # hyper params
-epochs     = 40
+epochs     = 10
 max_words  = 5000
 max_len    = 200
 
@@ -45,7 +46,19 @@ model.add(layers.Embedding(max_words, 40, input_length=max_len))
 model.add(layers.Bidirectional(layers.LSTM(20,dropout=0.6)))
 model.add(layers.Dense(3,activation='softmax'))
 model.compile(optimizer='rmsprop',loss='categorical_crossentropy', metrics=['accuracy'])
-history = model.fit(X_train, y_train, epochs=5,validation_data=(X_test, y_test))
+
+callbacks = [
+    keras.callbacks.EarlyStopping(
+        # Stop training when `val_loss` is no longer improving
+        monitor="val_loss",
+        # "no longer improving" being defined as "no better than 1e-2 less"
+        min_delta=1e-2,
+        # "no longer improving" being further defined as "for at least 2 epochs"
+        patience=10,
+        verbose=1,
+    )
+]
+history = model.fit(X_train, y_train, epochs=epochs,validation_data=(X_test, y_test), callbacks=callbacks)
 
 #Validating model
 test_loss, test_acc = model.evaluate(X_test, y_test, verbose=2)
