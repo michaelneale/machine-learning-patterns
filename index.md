@@ -62,23 +62,6 @@ This will update one file at a time, but if you are using github, you can use a 
 
 
 
-
-
-
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/michaelneale/machine-learning-patterns/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-
-
-
-
 ### more complex examples: 
 
 > ```curl --request POST --header 'Content-Type: application/json' --url https://us-east1-micprojects.cloudfunctions.net/ai-code-explainer --data '{"code":"    history = model.fit(X_train, y_train, epochs=100, batch_size=32, validation_split=0.1,\ncallbacks=[keras.callbacks.EarlyStopping(monitor='val_loss', patience=3, mode='min')], shuffle=False)\nprint(model.evaluate(X_test, y_test))"}'```
